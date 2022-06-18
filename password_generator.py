@@ -1,4 +1,6 @@
 import sys
+import random
+import string
 
 from numpy import character
 
@@ -50,3 +52,20 @@ print ("Small letters: ", lowercase_letters)
 print ("Big letters: ", uppercase_letters)
 print ("Special characters: ", special_characters)
 print ("Digits: ", digits)
+
+for _ in range (password_length):
+    if lowercase_letters > 0:
+        password.append(random.choice(string.ascii_lowercase))
+        lowercase_letters -= 1
+    if uppercase_letters > 0:
+        password.append(random.choice(string.ascii_uppercase))
+        uppercase_letters -= 1
+    if special_characters > 0:
+        password.append(random.choice(string.punctuation))
+        special_characters -= 1
+    if digits > 0:
+        password.append(random.choice(string.digits))
+        digits -= 1
+
+random.shuffle(password)
+print("Password: ", "".join(password))
