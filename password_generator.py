@@ -9,13 +9,15 @@ password = []
 number_of_characters_left = -1
 
 def update_characters_left (number_of_characters):
+    
     global number_of_characters_left
+    
     if number_of_characters < 0 or number_of_characters > number_of_characters_left:
-        print ("Number of characters from outside rage 0,", number_of_characters_left)
+        print ("Number of characters from outside rage 0 - ", number_of_characters_left)
         sys.exit(0)
     else:
         number_of_characters_left -= number_of_characters
-        print ("Characters left: ", number_of_characters)
+        print ("Characters left: ", number_of_characters_left)
 
 password_length = int(input ("How long will be the password? "))
 
